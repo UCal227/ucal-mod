@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "azyr:block/sigmarite_ore_block"
+  }
+}

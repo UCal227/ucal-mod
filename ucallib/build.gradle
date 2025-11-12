@@ -1,0 +1,47 @@
+buildscript {
+    repositories {
+        maven { url = 'https://maven.fabricmc.net/' }
+        mavenCentral()
+    }
+    dependencies {
+        classpath "net.fabricmc:fabric-loom:1.13-SNAPSHOT"  // version du plugin
+    }
+}
+
+apply plugin: 'fabric-loom'
+apply plugin: 'java'
+
+group = 'ucal.ucallib'                // Ton package Java
+version = "${mod_version}"          // Version du mod
+tasks.withType(Jar) {
+    archiveBaseName.set("ucallib")  // OK
+}
+repositories {
+    mavenCentral()
+    maven { url = 'https://maven.fabricmc.net/' }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${minecraft_version}"
+    mappings "net.fabricmc:yarn:${yarn_mappings}:v2"
+    modImplementation "net.fabricmc:fabric-loader:${loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
+
+    // Exemple de dépendance locale sur un autre mod / librairie
+    // modImplementation files('../ModLib/build/libs/ModLib-${mod_version}.jar')
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21) // Minecraft 1.21+ utilise Java 17
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+jar {
+    from(sourceSets.main.output)
+    archiveBaseName.set('ucallib') // Nom du jar
+}

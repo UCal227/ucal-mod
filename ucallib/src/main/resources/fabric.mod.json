@@ -1,0 +1,34 @@
+{
+	"schemaVersion": 1,
+	"id": "ucallib",
+	"version": "${version}",
+	"name": "UcalLib",
+	"description": "An utilitary mod for my mods",
+	"authors": [
+		"Ucal"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/ucallib/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"ucal.ucallib.UcalLib"
+		]
+	},
+	"mixins": [
+		//"ucallib.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.17.3",
+		"minecraft": "~1.21.10",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

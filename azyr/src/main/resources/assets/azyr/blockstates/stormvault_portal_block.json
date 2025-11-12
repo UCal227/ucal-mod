@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "azyr:block/stormvault_portal_block" }
+  }
+}
